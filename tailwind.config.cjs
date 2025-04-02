@@ -27,23 +27,23 @@ module.exports = {
         gradient: {
           '0%': {
             'background-position': '0% 50%',
-            'background-size': '400% 400%'
+            'background-size': '200% 200%',
           },
           '25%': {
             'background-position': '100% 50%',
-            'background-size': '300% 300%'
+            'background-size': '300% 300%',
           },
           '50%': {
             'background-position': '50% 100%',
-            'background-size': '400% 400%'
+            'background-size': '400% 400%',
           },
           '75%': {
             'background-position': '0% 50%',
-            'background-size': '300% 300%'
+            'background-size': '300% 300%',
           },
           '100%': {
             'background-position': '50% 0%',
-            'background-size': '400% 400%'
+            'background-size': '200% 200%',
           },
         },
       },
