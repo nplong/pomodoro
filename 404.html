@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Get the current path
+      const path = window.location.pathname;
+      // Remove /pomodoro/ from the path if it exists
+      const newPath = path.replace(/^\/pomodoro/, '');
+      // Redirect to the index.html with the correct path
+      window.location.href = '/pomodoro/index.html' + newPath;
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html> 
