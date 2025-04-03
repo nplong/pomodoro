@@ -191,29 +191,6 @@ function App() {
     setSets(settings.sets)
   }
 
-  const handleSessionComplete = () => {
-    if (currentSession) {
-      const completedSession: Session = {
-        ...currentSession,
-        completed: true,
-        events: [
-          ...currentSession.events,
-          {
-            type: 'complete' as const,
-            time: new Date().toISOString(),
-            round,
-            set,
-            isWorkTime
-          }
-        ]
-      }
-      const updatedSessions = [completedSession, ...sessions]
-      setSessions(updatedSessions)
-      localStorage.setItem('pomodoroSessions', JSON.stringify(updatedSessions))
-      setCurrentSession(null)
-    }
-  }
-
   const toggleTimer = () => {
     setIsRunning(!isRunning)
     if (!currentSession) {
