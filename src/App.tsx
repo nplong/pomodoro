@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import Timer from './components/Timer'
-import Settings from './components/Settings'
 import History from './components/History'
 import './App.css'
 import { Play, Pause, RotateCcw, Settings as SettingsIcon, History as HistoryIcon } from 'lucide-react'
@@ -52,7 +50,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    let interval: number | undefined
+    let interval: NodeJS.Timeout | undefined
     if (isRunning && timeLeft > 0) {
       interval = setInterval(() => {
         setTimeLeft((prev) => prev - 1)
@@ -60,7 +58,9 @@ function App() {
     } else if (timeLeft === 0) {
       handleTimerComplete()
     }
-    return () => clearInterval(interval)
+    return () => {
+      if (interval) clearInterval(interval)
+    }
   }, [isRunning, timeLeft])
 
   const handleTimerComplete = () => {
